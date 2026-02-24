@@ -5,7 +5,11 @@ bot = telebot.TeleBot("Здесь поменяйте это поле на сво
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
-    bot.reply_to(message, "Привет! Этот бот предназначен для экономии пластика и сортировок отходов. \n Команды: \n /ideas - идеи для поделок из пластиковых бутылок. \n /sort - как нужно сортировать отходы. \n /degradation - разложение отходов")
+    bot.reply_to(message, "Привет! Этот бот предназначен для экономии пластика и сортировок отходов. /help")
+
+@bot.message_handler(commands=['help'])
+def send_help(message):
+    bot.reply_to(message, "Команды: \n /ideas - идеи для поделок из пластиковых бутылок. \n /sort - как нужно сортировать отходы. \n /degradation - разложение отходов")
 
 @bot.message_handler(commands=['ideas'])
 def send_ideas(message):
